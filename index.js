@@ -7,7 +7,8 @@ parser.on('data', (data) => { // will have 14 bytes per data event
   let id = data.toJSON().data;
   id.shift(); // remove 1st byte (start-byte)
   id.pop(); // remove last byte (end-byte)
-  id = id.toString(16);
-  console.log(id);
-  console.log(typeof(id[0]));
+  for (i in id) {
+    console.log(id[i].toString(16))
+  } 
+  
 });
