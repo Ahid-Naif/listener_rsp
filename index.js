@@ -8,4 +8,5 @@ parser.on('data', (data) => { // will have 14 bytes per data event
   id.shift(); // remove 1st byte (start-byte)
   id.pop(); // remove last byte (end-byte)
   console.log(id);
+  console.log(typeof(id[0]));
 });
