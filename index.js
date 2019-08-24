@@ -3,7 +3,7 @@ const Serial = require('raspi-serial').Serial;
  
 raspi.init(() => {
   var serial = new Serial();
-  serial.open('/dev/ttyS0', {baudRate: 9600}, () => {
+  serial.open('/dev/ttyS0', () => {
     serial.on('data', (data) => {
       // process.stdout.write(data);
       console.log(data);
