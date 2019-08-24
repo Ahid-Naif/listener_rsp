@@ -6,5 +6,5 @@ const parser = port.pipe(new ByteLength({length: 14}))
 parser.on('data', (data) => { // will have 14 bytes per data event
   full_message = data.toJSON().data;
   console.log(full_message);
-  console.log(typeof(full_message));
+  console.log(full_message[0]);
 });
