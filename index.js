@@ -5,8 +5,9 @@ raspi.init(() => {
   var serial = new Serial('/dev/ttyS0');
   serial.open(() => {
     serial.on('data', (data) => {
-      process.stdout.write(data);
+      // process.stdout.write(data);
+      console.log(data);
     });
-    serial.write('Hello from raspi-serial');
+    console.log('Hello from raspi-serial');
   });
 });
