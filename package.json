@@ -1,0 +1,24 @@
+{
+  "name": "listener_rsp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ahid-Naif/listener_rsp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ahid-Naif/listener_rsp/issues"
+  },
+  "homepage": "https://github.com/Ahid-Naif/listener_rsp#readme",
+  "dependencies": {
+    "raspi": "^6.0.1",
+    "raspi-serial": "^5.1.1"
+  }
+}
