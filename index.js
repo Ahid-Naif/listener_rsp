@@ -1,13 +1,13 @@
-const raspi = require('raspi');
-const Serial = require('raspi-serial').Serial;
+var SerialPort = require('serialport');
+var port = new SerialPort('/dev/ttyS0');
  
-raspi.init(() => {
-  var serial = new Serial();
-  serial.open('/dev/ttyS0', () => {
-    serial.on('data', (data) => {
-      // process.stdout.write(data);
-      console.log(data);
-    });
-    console.log('Hello from raspi-serial');
+port.on('open', () => {
+  serial.on('data', (data) => {
+    console.log(data);
   });
+});
+ 
+// open errors will be emitted as an error event 
+port.on('error', function(err) {
+  console.log('Error: ', err.message);
 });
