@@ -2,7 +2,7 @@ var SerialPort = require('serialport');
 var port = new SerialPort('/dev/ttyS0');
  
 port.on('open', () => {
-  serial.on('data', (data) => {
+  port.on('data', (data) => {
     console.log(data);
   });
 });
