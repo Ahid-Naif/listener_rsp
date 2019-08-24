@@ -2,8 +2,8 @@ const raspi = require('raspi');
 const Serial = require('raspi-serial').Serial;
  
 raspi.init(() => {
-  var serial = new Serial('/dev/ttyS0');
-  serial.open(() => {
+  var serial = new Serial();
+  serial.open('/dev/ttyS0', {baudRate: 9600}, () => {
     serial.on('data', (data) => {
       // process.stdout.write(data);
       console.log(data);
