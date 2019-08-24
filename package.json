@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Ahid-Naif/listener_rsp#readme",
   "dependencies": {
     "raspi": "^6.0.1",
-    "raspi-serial": "^5.1.1"
+    "raspi-serial": "^5.1.1",
+    "serialport": "^7.1.5"
   }
 }
