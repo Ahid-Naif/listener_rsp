@@ -1,14 +1,17 @@
-var serialport = require("serialport");
-var SerialPort = serialport.SerialPort;
+const SerialPort = require('serialport')
+const parsers = SerialPort.parsers
 
-var serialPort = new SerialPort("/dev/ttyS0", {
-  baudrate: 9600,
-  parser: serialport.parsers.readline("\n")
-});
+// Use a `\r\n` as a line terminator
+const parser = new parsers.Readline({
+  delimiter: '\r\n',
+})
 
-serialPort.on("open", function () {
-  console.log('open');
-  serialPort.on('data', function(data) {
-    console.log(data);
-  });
-});
+const port = new SerialPort('/dev/ttyS0', {
+  baudRate: 9600,
+})
+
+port.pipe(parser)
+
+port.on('open', () => console.log('Port open'))
+
+parser.on('data', console.log)
