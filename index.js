@@ -1,15 +1,14 @@
-const SerialPort = require('serialport');
-const Readline = require('@serialport/parser-readline')
+var serialport = require("serialport");
+var SerialPort = serialport.SerialPort;
 
-const port = new SerialPort('/dev/ttyS0');
-const parser = port.pipe(new Readline());
+var serialPort = new SerialPort("/dev/ttyS0", {
+  baudrate: 9600,
+  parser: serialport.parsers.readline("\n")
+});
 
-
-const baudRate = 9600;
-const delay_ms = 1000 / baudRate;
-
-parser.on('data', data => {
-  console.log(`> ${data}`);
-
-  
+serialPort.on("open", function () {
+  console.log('open');
+  serialPort.on('data', function(data) {
+    console.log(data);
+  });
 });
