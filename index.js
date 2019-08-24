@@ -1,24 +1,15 @@
 const SerialPort = require('serialport');
+const Readline = require('@serialport/parser-readline')
+
 const port = new SerialPort('/dev/ttyS0');
+const parser = new Readline();
+port.pipe(parser);
 
 const baudRate = 9600;
 const delay_ms = 1000 / baudRate;
 
-var counter = 0;
-port.on('data', (data) => {
-  console.log(typeof(data.Buffer));
-  setInterval( () => {
-      
-    counter++;
-    if(counter == 14){
-      clearInterval();
-    }
-  }
-      
-  , delay_ms)
-});
- 
-// open errors will be emitted as an error event 
-port.on('error', function(err) {
-  console.log('Error: ', err.message);
+parser.on('data', data => {
+  console.log(`> ${data}`);
+
+  
 });
