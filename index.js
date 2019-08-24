@@ -6,7 +6,7 @@ const delay_ms = 1000 / baudRate;
 
 var counter = 0;
 port.on('data', (data) => {
-  console.log(typeof(data));
+  console.log(typeof(data.Buffer));
   setInterval( () => {
       
     counter++;
