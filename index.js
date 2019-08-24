@@ -1,6 +1,6 @@
-var SerialPort = require('serialport');
-var port = new SerialPort('/dev/ttyS0');
- 
+const SerialPort = require('serialport');
+const port = new SerialPort('/dev/ttyS0');
+
 port.on('open', () => {
   port.on('data', (data) => {
     console.log(data);
