@@ -17,6 +17,7 @@ function getID(data) {
 
     // convert id from ASCII into DEC
     let id_dec = parseInt(id_ascii, 16).toString(10);
+    console.log(id_dec);
     return id_dec;
 };
 
