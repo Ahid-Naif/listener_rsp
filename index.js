@@ -5,9 +5,7 @@ const port = new SerialPort('/dev/ttyS0')
 const getId = require('./retrieveInfo.js')
 
 const parser = port.pipe(new ByteLength({length: 14}))
-port.on( () => console.log("port on"));
 parser.on('data', (data) => { // will have 14 bytes per data event
   id = getId(data);
   console.log(id);
-  port.on('close', () => console.log("port is off"));
 });
