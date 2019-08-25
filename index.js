@@ -11,7 +11,7 @@ parser.on('data', (data) => { // will have 14 bytes per data event
 	let id_ascii = '';
 	for (let i = 0; i < id_hex.length; i += 2) {
 	let id_ascii = '';
-    id_ascii += String.fromCharCode(parseInt(id_hex.substr(n, 2), 16));
+    id_ascii += String.fromCharCode(parseInt(id_hex.substr(i, 2), 16));
 	}
   console.log(id_ascii);
   console.log(typeof(id_ascii));
