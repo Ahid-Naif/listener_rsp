@@ -9,7 +9,8 @@ parser.on('data', (data) => { // will have 14 bytes per data event
   
   let id_hex = "";
   for (i in id) {
-    id_hex += id[i];
-  } 
-  console.log(id_hex);
+    id_hex += id[i].toString(16);
+  }
+  id_dec = id_hex.toString(10);
+  console.log(id_dec);
 });
