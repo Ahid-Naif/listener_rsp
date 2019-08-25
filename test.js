@@ -12,6 +12,7 @@ function hex_to_ascii(str1)
  }
 
 let mes = hex_to_ascii('3132');
-console.log(mes)
+console.log(mes);
+console.log(parseInt(mes, 16).toString(10));
 let dec = parseInt(hex);
 console.log(dec.toString(16));

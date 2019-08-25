@@ -18,5 +18,7 @@ parser.on('data', (data) => { // will have 14 bytes per data event
 	for (let i = 0; i < hex.length; i += 2) {
     id_ascii += String.fromCharCode(parseInt(hex.substr(i, 2), 16));
   }
-  console.log(id_ascii);
+
+  let id_dec = parseInt(id_ascii, 16).toString(10);
+  console.log(id_dec);
 });
