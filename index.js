@@ -7,10 +7,12 @@ parser.on('data', (data) => { // will have 14 bytes per data event
   let full_message = data.toJSON().data;
   let id = full_message.slice(7, 11);
   
-  let id_hex = "";
-  for (i in id) {
-    id_hex += id[i].toString(16);
-  }
-  console.log(id_hex);
-  console.log(typeof(id_hex));
+  let id_hex  = id.toString();
+	let id_ascii = '';
+	for (let i = 0; i < id_hex.length; i += 2) {
+	let id_ascii = '';
+    id_ascii += String.fromCharCode(parseInt(hex.substr(n, 2), 16));
+	}
+  console.log(id_ascii);
+  console.log(typeof(id_ascii));
 });
