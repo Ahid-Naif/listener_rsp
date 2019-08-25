@@ -9,5 +9,5 @@ port.on( () => console.log("port on"));
 parser.on('data', (data) => { // will have 14 bytes per data event
   id = getId(data);
   console.log(id);
-  port.close();
+  port.on('close', () => console.log("port is off"));
 });
