@@ -6,6 +6,6 @@ const getId = require('./retrieveInfo.js')
 
 const parser = port.pipe(new ByteLength({length: 14}))
 parser.on('data', (data) => { // will have 14 bytes per data event
-  id = getID(data);
+  id = getId(data);
   console.log(id);
 });
