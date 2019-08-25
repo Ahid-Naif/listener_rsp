@@ -7,5 +7,9 @@ parser.on('data', (data) => { // will have 14 bytes per data event
   let full_message = data.toJSON().data;
   let id = full_message.slice(7, 11);
   
-  console.log(id);
+  let id_hex = "";
+  for (i in id) {
+    id_hex += id[i];
+  } 
+  console.log(id_hex);
 });
