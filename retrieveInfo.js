@@ -10,6 +10,7 @@ function getID(data) {
 
     let id_ascii = ''; // to store id in ASCII format
     // convert id from HEX into ASCII
+    let hex = id_hex.toString();
     for (let i = 0; i < hex.length; i += 2) {
         id_ascii += String.fromCharCode(parseInt(hex.substr(i, 2), 16));
     }
