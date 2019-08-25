@@ -11,7 +11,6 @@ parser.on('data', (data) => { // will have 14 bytes per data event
   for (i in id) {
     id_hex += id[i].toString(16);
   }
-  console.log(id_hex);
 
   let hex  = id_hex.toString();
 	let id_ascii = '';
